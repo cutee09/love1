@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Love Website ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:linear-gradient(to bottom right,#ffb6d9,#ffcce5,#ffd9ec);
+      min-height:100vh;
+      overflow-x:hidden;
+      color:#fff;
+    }
+
+    .page{
+      display:none;
+      min-height:100vh;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      padding:20px;
+      text-align:center;
+    }
+
+    .active{
+      display:flex;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:35px;
+      border-radius:25px;
+      width:90%;
+      max-width:450px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      font-size:3rem;
+      margin-bottom:20px;
+      font-family:'Great Vibes',cursive;
+    }
+
+    h2{
+      margin-bottom:15px;
+      font-weight:600;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      border:none;
+      outline:none;
+      border-radius:12px;
+      margin-top:15px;
+      font-size:1rem;
+      text-align:center;
+      color:#ff4f9a;
+    }
+
+    button{
+      margin-top:15px;
+      padding:13px 20px;
+      border:none;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:1rem;
+      background:#ff4f9a;
+      color:white;
+      transition:0.3s;
+      width:100%;
+    }
+
+    button:hover{
+      background:#ff2f85;
+      transform:scale(1.03);
+    }
+
+    .menu-buttons{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      width:100%;
+      margin-top:20px;
+    }
+
+    .content-box{
+  margin-top:20px;
+  background:#ffcfe3;
+  padding:20px;
+  border-radius:20px;
+  animation:fade 0.5s ease;
+  color:#ff2f85;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+    .note{
+  background:#ffd6e8;
+  padding:15px;
+  margin:10px 0;
+  border-radius:15px;
+  font-size:1rem;
+  color:#ff2f85;
+  font-weight:600;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+      gap:15px;
+      margin-top:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+      border-radius:18px;
+      border:3px solid rgba(255,255,255,0.4);
+    }
+
+    .welcome-text{
+      font-family:'Great Vibes',cursive;
+      font-size:4rem;
+      animation:fade 2s ease;
+      text-shadow:0 0 15px rgba(255,255,255,0.7);
+    }
+
+    @keyframes fade{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .small-text{
+      margin-top:10px;
+      opacity:0.8;
+      font-size:0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div class="page active" id="loginPage">
+    <div class="card">
+      <h1>Secret Love Website ❤️</h1>
+      <p>Enter the secret code to continue</p>
+
+      <input type="password" id="secretCode" placeholder="Enter Secret Code">
+      <button onclick="checkCode()">Enter</button>
+
+      <p class="small-text">Only for my girl 💌</p>
+    </div>
+  </div>
+
+  <!-- WELCOME PAGE -->
+  <div class="page" id="welcomePage">
+    <div class="welcome-text">
+      Welcome My Love ❤️<br>
+      Enjoy Your Stay
+    </div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div class="page" id="mainPage">
+    <div class="card">
+      <h1>For You ❤️</h1>
+
+      <div class="menu-buttons">
+        <button onclick="showSection('letter')">Love Letter 💌</button>
+        <button onclick="showSection('music')">Music 🎵</button>
+        <button onclick="showSection('notes')">Notes 📝</button>
+        <button onclick="showSection('gallery')">Gallery 🌸</button>
+      </div>
+
+      <!-- LOVE LETTER -->
+      <div class="content-box" id="letter" style="display:none;">
+        <h2>A Letter For You 💌</h2>
+        <p style="color:#ff2f85; font-weight:500; line-height:1.8;">
+          Hello sayang ❤️<br><br>
+          Thank you for coming into my life. You make my days happier, brighter and more beautiful. No matter what happens, I will always appreciate you and love you with all my heart. You are my favorite person forever 💖
+        </p>
+      </div>
+
+      <!-- MUSIC -->
+      <div class="content-box" id="music" style="display:none;">
+        <h2>Sweet Songs 🎶</h2>
+
+        <p style="margin-top:10px;">orang yang sama</p>
+        <audio controls style="width:100%; margin-top:10px;">
+          <source src="OST Khianat Yang Terpilih  Sayang Orang Sama - Adira Suhaimi  Muzik Video Rasmi.mp3" type="audio/mpeg">
+        </audio>
+
+        <p style="margin-top:20px;">sesal separuh nyawa</p>
+        <audio controls style="width:100%; margin-top:10px;">
+          <source src="Alyah - Sesal Separuh Nyawa (Lirik).mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <!-- NOTES -->
+      <div class="content-box" id="notes" style="display:none;">
+        <h2>Little Notes ❤️</h2>
+
+        <div class="note">Take care okay sayang 💖</div>
+        <div class="note">Eat on time please 🍓</div>
+        <div class="note">You are mine... always ❤️</div>
+      </div>
+
+      <!-- GALLERY -->
+      <div class="content-box" id="gallery" style="display:none;">
+        <h2>Flower Gallery 🌸</h2>
+
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=800&auto=format&fit=crop" alt="flower">
+
+          <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?q=80&w=800&auto=format&fit=crop" alt="flower">
+
+          <img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?q=80&w=800&auto=format&fit=crop" alt="flower">
+
+          <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?q=80&w=800&auto=format&fit=crop" alt="flower">
+        </div>
+
+        <p style="margin-top:15px; font-size:0.9rem;">
+          Love Youuu Sayanggggg🌸
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function checkCode(){
+      const code = document.getElementById('secretCode').value;
+
+      if(code === '051009'){
+        document.getElementById('loginPage').classList.remove('active');
+        document.getElementById('welcomePage').classList.add('active');
+
+        setTimeout(() => {
+          document.getElementById('welcomePage').classList.remove('active');
+          document.getElementById('mainPage').classList.add('active');
+        },3000);
+      }
+      else{
+        alert('Wrong secret code 💔');
+      }
+    }
+
+    function showSection(sectionId){
+      const sections = document.querySelectorAll('.content-box');
+
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      document.getElementById(sectionId).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
